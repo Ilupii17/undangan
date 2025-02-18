@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Bazar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Font Awesome CDN untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Menambahkan ikon komputer di sini -->
+        <div class="coding-icon">
+            <i class="fas fa-laptop-code"></i>
+        </div>
+        
+        <!-- Tambahkan teks di atas tombol -->
+        <h3 id="customText" class="custom-text">Mengundang Anda Untuk Hadir</h3>
+        
+
+        <button id="star-btn" onclick="showInvitation()">Lihat Undangan</button>
+        <canvas id="star-canvas"></canvas>
+        <div id="invitation" class="hidden">
+            <h1>Undangan untuk {{ name }}</h1>
+            <p>Kami Mengundang Anda Untuk Mengadiri Bazar Ini Pada:</p>
+            <h2>21 Februari 2025</h2>
+            <p>Lokasi:  
+                <a href="https://www.google.com/maps/place/King+Street+ParePare/@-4.0325727,119.6297853,17z/data=!3m1!4b1!4m6!3m5!1s0x2d95bbef1765d887:0x5a21451df7ac1e1e!8m2!3d-4.0325727!4d119.6323602!16s%2Fg%2F11s56t2521?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D" 
+                   target="_blank" 
+                   id="location-link">
+                   King Street, ParePare
+                </a>
+             </p>
+             
+
+            <!-- Tombol Lihat Selengkapnya -->
+            <button id="toggleDetailsBtn">Lihat Selengkapnya</button>
+            <audio id="bgMusic" src="static/music.mp3"></audio>
+
+            <!-- Informasi Tambahan (Awalnya Disembunyikan) -->
+            <div id="extraDetails" class="hidden">
+                <p>Acara ini akan diisi dengan berbagai bazar makanan, Minuman dll.</p>
+                <p>Jangan lewatkan kesempatan untuk menikmati makanan, minuman yang enak dan hiburan menarik!</p>
+                <p>Jangan lupa untuk datang ya😉😉</p>
+                <p>"Karena pahlawan Himmel akan melakukan hal yang sama" -atmin</p>
+            </div>
+            
+            <div class="countdown" id="countdown">
+                <span id="days"></span> hari
+                <span id="hours"></span> jam
+                <span id="minutes"></span> menit
+                <span id="seconds"></span> detik
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

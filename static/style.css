@@ -1,0 +1,232 @@
+body {
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    padding: 50px;
+    background: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png'), linear-gradient(to bottom, #3169A2, #4A89C4, #8ED2F0, #D7F5F9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-attachment: fixed;
+    animation: backgroundAnimation 70s infinite alternate;
+}
+
+/* Animasi untuk latar belakang */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.container {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+h1 {
+    color: #3169A2;
+    font-size: 2.5em;
+    animation: fadeIn 1s ease-in-out;
+}
+
+p, h2 {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #0d47a1;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.countdown {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #4A89C4;
+    opacity: 0;
+    animation: fadeIn 1.8s ease-in-out forwards;
+}
+
+.countdown span {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #3169A2;
+    color: white;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+#invitation {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 1s ease-out forwards;
+}
+
+/* Animasi fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animasi slideIn */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#showInvitationBtn {
+    background-color: #3169A2;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#showInvitationBtn:hover {
+    background-color: #4A89C4;
+    transform: scale(1.1);
+}
+
+/* Animasi ikon coding */
+.coding-icon {
+    font-size: 5em;
+    color: #4A89C4;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Animasi pulse pada ikon */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.custom-text {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #0d00ff; /* Warna teks */
+    margin-bottom: 10px; /* Jarak antara teks dan tombol */
+    text-transform: uppercase; /* Teks dalam huruf kapital */
+    letter-spacing: 1px; /* Jarak antar huruf */
+}
+
+button {
+    position: relative;
+    overflow: hidden;
+    background: #008CBA;
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:active::after {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 140, 186, 0.5);
+}
+
+
+#star-btn {
+    background: #0a93b1;
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#star-btn:hover {
+    background: #0a25d8;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(103, 58, 183, 0.5);
+}
+
+#star-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+
+.hidden {
+    display: none;
+}
+
+#toggleDetailsBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#toggleDetailsBtn:hover {
+    background-color: #0056b3;
+}
+
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
